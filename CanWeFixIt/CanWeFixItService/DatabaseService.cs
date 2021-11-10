@@ -77,6 +77,22 @@ namespace CanWeFixItService
                        (6, 6666, 'Sedol6', 1)";
 
             _connection.Execute(createMarketData);
+            
+               const string createMarketValuation = @"
+                CREATE TABLE marketValuation
+                (
+                    name        String,
+                    total       int,
+                
+                );
+                INSERT INTO marketValuation
+                VALUES ( 'Sedol1', 0),
+                       ('Sedol2', 10),
+                       ( 'Sedol3', 220),                     
+                       ( 'Sedol6', 2221)";
+
+            _connection.Execute(createMarketValuation);
+            
         }
     }
 }
